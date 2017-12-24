@@ -11,7 +11,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 WebFont.load({
   google: {
-    families: ['Raleway:300,400,700', 'sans-serif']
+    families: ['Raleway:300,400,700', 'Montserrat:500', 'sans-serif']
   }
 });
 

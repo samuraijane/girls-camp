@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import Clips from '../clips';
 import './style.css';
 
+import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -14,11 +16,13 @@ class Main extends Component {
         <Clips key={index} {...clip} />
       )
     });
-    
+
     return (
-      <ul>
-        {clips}
-      </ul>
+      <Element name="clips">
+        <ul>
+          {clips}
+        </ul>
+      </Element>
     );
   }
 }
