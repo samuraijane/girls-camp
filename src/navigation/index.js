@@ -12,6 +12,7 @@ class Navigation extends Component {
     this.state = { width: '0', height: '0' };
     this.handleClick = this.handleClick.bind(this);
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.toggleNavigation = this.toggleNavigation.bind(this);
   }
 
   handleClick() {
@@ -23,6 +24,14 @@ class Navigation extends Component {
     console.log(window.innerWidth, window.innerHeight);
   }
 
+  toggleNavigation() {
+    if(window.pageYOffset >= window.innerHeight) {
+      this.setState({fixedNavs: 'active'})
+    } else {
+      this.setState({fixedNavs: ''});
+    }
+  }
+
   componentDidMount() {
     this.updateWindowDimensions();
     Events.scrollEvent.register('begin', function() {
@@ -31,8 +40,8 @@ class Navigation extends Component {
     Events.scrollEvent.register('end', function() {
       console.log("end", arguments);
     });
-    // window.addEventListener('resize', this.updateWindowDimensions);
     window.addEventListener('resize', debounce(this.updateWindowDimensions, 400));
+    window.addEventListener('scroll', debounce(this.toggleNavigation, 100));
   }
 
 
@@ -82,6 +91,10 @@ class Navigation extends Component {
     return (
       <div>
         <Style.imageW>
+          <Style.fixedNavs className={this.state.fixedNavs}>
+            <Style.item2>Register</Style.item2>
+            <Style.item2>Login</Style.item2>
+          </Style.fixedNavs>
           <Style.box>
             <Style.title>Girls Camp 2018</Style.title>
             <Style.callout>Vivamus efficitur mauris eget ligula gravida, id accumsan enim luctus.</Style.callout>

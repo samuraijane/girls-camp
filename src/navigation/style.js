@@ -32,6 +32,34 @@ const Style = {
     padding: 40px 60px;
     width: 260px;
   `,
+  fixedNavs: styled.ul`
+    background-image: url(${banner});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    transition: all 500ms ease-in-out;
+    width: 100%;
+    &:after {
+      background: rgba(0, 0, 0, 0.5);
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 6;
+    }
+    &.active {
+      max-height: 600px;
+    }
+  `,
   item: styled.li`
     background: rgba(28, 67, 130, 0);
     border: 1px solid rgba(255, 255, 255, 0.7);
@@ -47,6 +75,11 @@ const Style = {
       background: rgba(28, 67, 130, 1);
       border: 1px solid transparent;
     }
+  `,
+  item2: styled.li`
+    display: inline-block;
+    margin-right: 8px;
+    padding: 14px 0;
   `,
   imageW: styled.div`
     background-image: url(${banner});
