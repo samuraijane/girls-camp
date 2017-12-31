@@ -12,16 +12,23 @@ const Style = {
     transform: translate(-50%);
     width: 86px;
     z-index: 12;
+    &.active {
+      left: 1000%;
+    }
   `,
   box: styled.div`
     color: white;
     height: 50vh;
-    left: 50%;
+    right: 50%;
     position: absolute;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(50%, -50%);
     width: 50%;
     z-index: 12;
+    &.active {
+      right: 0;
+      transform: translate(0%, -50%);
+    }
   `,
   callout: styled.div`
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -31,34 +38,6 @@ const Style = {
     margin 10px auto 40px;
     padding: 40px 60px;
     width: 260px;
-  `,
-  fixedNavs: styled.ul`
-    background-image: url(${banner});
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    left: 0;
-    max-height: 0;
-    overflow: hidden;
-    position: fixed;
-    text-align: right;
-    top: 0;
-    transition: all 500ms ease-in-out;
-    width: 100%;
-    &:after {
-      background: rgba(0, 0, 0, 0.5);
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 6;
-    }
-    &.active {
-      max-height: 600px;
-    }
   `,
   item: styled.li`
     background: rgba(28, 67, 130, 0);
@@ -75,11 +54,10 @@ const Style = {
       background: rgba(28, 67, 130, 1);
       border: 1px solid transparent;
     }
-  `,
-  item2: styled.li`
-    display: inline-block;
-    margin-right: 8px;
-    padding: 14px 0;
+    &.active {
+      border: none;
+      width: auto;
+    }
   `,
   imageW: styled.div`
     background-image: url(${banner});
@@ -99,6 +77,10 @@ const Style = {
       width: 100%;
       z-index: 6;
     }
+    &.active {
+      position: fixed;
+      top: calc(-100% + 104px);
+    }
   `,
   layout: styled.div`
     background: aliceblue;
@@ -111,6 +93,9 @@ const Style = {
     text-align: center;
     text-transform: uppercase;
     width: 80%;
+    &.active {
+      text-align: right;
+    }
   `,
   title: styled.h1`
     font-family: 'Montserrat', sans-serif;
