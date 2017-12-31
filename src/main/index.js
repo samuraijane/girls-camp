@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 import Clips from '../clips';
-import './style.css';
+import Style from './style.js';
 
 import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
@@ -19,9 +19,9 @@ class Main extends Component {
 
     return (
       <Element name="clips">
-        <ul>
+        <Style.wrapper>
           {clips}
-        </ul>
+        </Style.wrapper>
       </Element>
     );
   }

@@ -4,13 +4,14 @@ import breakfast from '../img/breakfast.jpg';
 import girls from '../img/girls.jpg';
 import lake from '../img/lake.jpg';
 import smiles from '../img/smiles.jpg';
+import logo from '../img/logo.jpg';
 
 const initialState = {
   clips: [
     {
       title: 'Grow in Spirit',
       summary: 'Maecenas pharetra nulla at sapien blandit ornare. Mauris blandit sollicitudin neque ut vehicula. Sed at libero et arcu egestas viverra ac at purus. Nunc est sem, ullamcorper a quam et, ultrices hendrerit nulla. Praesent ut pretium nibh.',
-      image: breakfast
+      image: logo
     },
     {
       title: 'Grow in Strength',
