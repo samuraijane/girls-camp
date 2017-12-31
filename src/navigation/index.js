@@ -4,6 +4,7 @@ import {loginUser} from '../actions';
 import Style from './style.js';
 import arrow from './arrow.png';
 import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import {debounce} from '../helpers';
 
 class Navigation extends Component {
   constructor(props) {
@@ -30,8 +31,13 @@ class Navigation extends Component {
     Events.scrollEvent.register('end', function() {
       console.log("end", arguments);
     });
-    window.addEventListener('resize', this.updateWindowDimensions);
+    // window.addEventListener('resize', this.updateWindowDimensions);
+    window.addEventListener('resize', debounce(this.updateWindowDimensions, 400));
   }
+
+
+  // window.addEventListener('resize', JD.debounce(JD.lastName, 400));
+  // window.addEventListener('resize', JD.debounce(JD.firstName, 400, true));
 
   scrollTo() {
     scroller.scrollTo('scroll-to-element', {
