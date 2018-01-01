@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 import Clips from '../clips';
+import Landing from '../landing';
 import Style from './style.js';
 
 import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
@@ -18,11 +19,14 @@ class Main extends Component {
     });
 
     return (
-      <Element name="clips">
-        <Style.wrapper>
-          {clips}
-        </Style.wrapper>
-      </Element>
+      <div>
+        <Landing />
+        <Element name="clips">
+          <Style.wrapper>
+            {clips}
+          </Style.wrapper>
+        </Element>
+      </div>
     );
   }
 }

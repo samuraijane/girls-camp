@@ -6,13 +6,12 @@ import arrow from './arrow.png';
 import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import {debounce} from '../helpers';
 
-class Navigation extends Component {
+class Landing extends Component {
   constructor(props) {
     super(props);
     this.state = { width: '0', height: '0' };
     this.handleClick = this.handleClick.bind(this);
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-    this.toggleNavigation = this.toggleNavigation.bind(this);
   }
 
   handleClick() {
@@ -22,15 +21,6 @@ class Navigation extends Component {
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
     console.log(window.innerWidth, window.innerHeight);
-  }
-
-  toggleNavigation() {
-    let offset = 104;
-    if(window.pageYOffset >= window.innerHeight - offset) {
-      this.setState({fixedNavs: 'active'})
-    } else {
-      this.setState({fixedNavs: ''});
-    }
   }
 
   componentDidMount() {
@@ -91,13 +81,13 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        <Style.imageW className={this.state.fixedNavs}>
-          <Style.box className={this.state.fixedNavs}>
+        <Style.imageW>
+          <Style.box>
             <Style.title>Girls Camp 2018</Style.title>
             <Style.callout>Vivamus efficitur mauris eget ligula gravida, id accumsan enim luctus.</Style.callout>
-            <Style.navs className={this.state.fixedNavs}>
-              <Style.item className={this.state.fixedNavs}><a>Register</a></Style.item>
-              <Style.item className={this.state.fixedNavs}><a onClick={this.handleClick}>Login</a></Style.item>
+            <Style.navs>
+              <Style.item><a>Register</a></Style.item>
+              <Style.item><a onClick={this.handleClick}>Login</a></Style.item>
             </Style.navs>
           </Style.box>
           <Link to="clips" spy={true} smooth={true} duration={500}><Style.arrow src={arrow} className={this.state.fixedNavs} /></Link>
@@ -112,4 +102,4 @@ const mapStateToProps = state => ({
     loggedIn: state.loggedIn
 });
 
-export default connect(mapStateToProps)(Navigation);
+export default connect(mapStateToProps)(Landing);

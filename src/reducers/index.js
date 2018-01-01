@@ -29,7 +29,9 @@ const initialState = {
       image: smiles
     }
   ],
-  loggedIn: false
+  loggedIn: false,
+  isFixed: false,
+  isMobile: false
 }
 
 export const reducer = (state=initialState, action) => {
@@ -38,6 +40,14 @@ export const reducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       loggedIn: !action.loggedIn
     });
+  } else if (action.type === actions.IS_MOBILE) {
+    return Object.assign({}, state, {
+      isMobile: !action.status
+    })
+  } else if (action.type === actions.IS_FIXED) {
+    return Object.assign({}, state, {
+      isFixed: action.status
+    })
   }
   return state;
 };

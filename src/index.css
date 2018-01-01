@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -5,11 +14,21 @@ body {
   font-size: 16px;
 }
 
-a {
-  cursor: pointer;
+img {
+  height: 100%;
+  width: auto;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+ul {
+  list-style-type: none;
+}
+
+.cf:after,
+.cf:before {
+  content: '';
+  display: table;
+}
+
+.cf:after {
+  clear: both;
 }
