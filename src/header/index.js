@@ -8,8 +8,9 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // isFixed: false
-      // isMobile: false,
+      offset: {
+        mobile: 46
+      }
     }
     this.handleClick = this.handleClick.bind(this);
     this.toggleNavigationBg = this.toggleNavigationBg.bind(this);

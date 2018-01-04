@@ -31,7 +31,11 @@ const initialState = {
   ],
   loggedIn: false,
   isFixed: false,
-  isMobile: false
+  isMobile: false,
+  viewport: {
+    height: 0,
+    width: 0
+  }
 }
 
 export const reducer = (state=initialState, action) => {
@@ -43,11 +47,19 @@ export const reducer = (state=initialState, action) => {
   } else if (action.type === actions.IS_MOBILE) {
     return Object.assign({}, state, {
       isMobile: !action.status
-    })
+    });
   } else if (action.type === actions.IS_FIXED) {
     return Object.assign({}, state, {
       isFixed: action.status
-    })
+    });
+  } else if (action.type === actions.SET_VIEWPORT_DIMENSIONS) {
+    return {
+      ...state,
+      viewport: {
+        height: action.height,
+        width: action.width
+      }
+    };
   }
   return state;
 };

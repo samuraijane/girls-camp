@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
-
+import React, {Component} from 'react';
 import Footer from './footer';
 import Header from './header';
 import Main from './main';
 import './App.css';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="App">
@@ -18,10 +22,3 @@ class App extends Component {
 }
 
 export default App;
-
-// <h2>Register Now</h2>
-// <form>
-//   <input type="text" placeholder="First Name" />
-//   <input type="text" placeholder="Last Name" />
-//   <input type="text" placeholder="Ward or Branch" />
-// </form>

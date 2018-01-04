@@ -15,3 +15,10 @@ export const isFixed = (status) => ({
     type: IS_FIXED,
     status
 });
+
+export const SET_VIEWPORT_DIMENSIONS = 'SET_VIEWPORT_DIMENSIONS';
+export const setViewportDimensions = (width, height) => ({
+    type: SET_VIEWPORT_DIMENSIONS,
+    height,
+    width
+});
