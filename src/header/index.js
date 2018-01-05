@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {loginUser} from '../actions';
 import Style from './style.js';
 import {isMobile, isFixed} from '../actions';
+import Navigation from '../navigation';
 
 class Header extends Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class Header extends Component {
         <Style.mobileicon onClick={this.handleClick}>
           <Style.stripes className={this.props.isMobile ? 'active' : ''}></Style.stripes>
         </Style.mobileicon>
+        <Navigation showMobile={this.props.isMobile ? 'active' : ''}/>
       </Style.wrapper>
     );
   }
@@ -46,7 +48,7 @@ class Header extends Component {
 
 const mapStateToProps = state => ({
   isFixed: state.isFixed,
-  isMobile: state.isMobile,
+  isMobile: state.navigation.isMobile,
 });
 
 export default connect(mapStateToProps)(Header);

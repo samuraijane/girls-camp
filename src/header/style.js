@@ -53,11 +53,13 @@ const Style = {
       border-bottom: 2px solid transparent;
     }
     &.active:before {
+      border-bottom: 2px solid crimson;
       top: 0;
       transform: rotate(-405deg);
       -webkit-transform: rotate(-405deg);
     }
     &.active: after {
+      border-bottom: 2px solid crimson;
       top: 0;
       transform: rotate(405deg);
       -webkit-transform: rotate(405deg);

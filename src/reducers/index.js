@@ -30,8 +30,13 @@ const initialState = {
     }
   ],
   loggedIn: false,
+  isScroll: true,
   isFixed: false,
-  isMobile: false,
+  // isMobile: false,
+  navigation: {
+    hasScroll: true,
+    isMobile: false,
+  },
   viewport: {
     height: 0,
     width: 0
@@ -44,10 +49,24 @@ export const reducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       loggedIn: !action.loggedIn
     });
+  // } else if (action.type === actions.IS_MOBILE) {
+  //   return Object.assign({}, state, {
+  //     isMobile: !action.status
+  //   });
   } else if (action.type === actions.IS_MOBILE) {
-    return Object.assign({}, state, {
-      isMobile: !action.status
-    });
+    return {
+      ...state,
+      navigation: {
+        hasScroll: !state.navigation.hasScroll,
+        isMobile: !action.status
+      }
+    };
+  // } else if (action.type === actions.IS_MOBILE) {
+  //   return {
+  //     ...state,
+  //     isMobile: !action.status,
+  //     isScroll: !state.isScroll
+  //   };
   } else if (action.type === actions.IS_FIXED) {
     return Object.assign({}, state, {
       isFixed: action.status
