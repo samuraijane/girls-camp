@@ -12,6 +12,7 @@ const Style = {
     top: 50%;
     transform: translateY(-50%);
     width: 28px;
+    z-index: 10;
   `,
   stripes: styled.div`
     background: none;
