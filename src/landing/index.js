@@ -69,12 +69,7 @@ class Landing extends Component {
       <div>
         <Style.imageW>
           <Style.box>
-            <Style.title>Girls Camp 2018</Style.title>
-            <Style.callout>Vivamus efficitur mauris eget ligula gravida, id accumsan enim luctus.</Style.callout>
-            <Style.navs>
-              <Style.item><a>Register</a></Style.item>
-              <Style.item><a onClick={this.handleClick}>Login</a></Style.item>
-            </Style.navs>
+            <Style.callout>Vivamus efficitur mauris eget ligula gravida, id accumsan enim luctus. Donec id suscipit justo, ac tincidunt metus. Ut at erat non sem rutrum malesuada.</Style.callout>
           </Style.box>
           <Link to="clips" spy={true} smooth={true} duration={500}><Style.arrow src={arrow} /></Link>
         </Style.imageW>
