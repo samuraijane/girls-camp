@@ -77,7 +77,7 @@ const Style = {
     width: 100%;
     z-index: 30;
     &.active {
-      background: rgba(28, 67, 130, 1);
+      background: rgba(73, 104, 63, 0.9);
     }
   `
 }

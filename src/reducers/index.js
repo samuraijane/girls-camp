@@ -1,32 +1,52 @@
 import * as actions from '../actions';
 
 import breakfast from '../img/breakfast.jpg';
-import girls from '../img/girls.jpg';
-import lake from '../img/lake.jpg';
-import smiles from '../img/smiles.jpg';
+import threebw from '../img/threebw.jpg';
+import lakebw from '../img/lakebw.jpg';
+import smilesbw from '../img/smilesbw.jpg';
 import logo from '../img/logo.jpg';
 
 const initialState = {
   clips: [
     {
-      title: 'Grow in Spirit',
+      title: 'Quisque eget eleifend',
       summary: 'Maecenas pharetra nulla at sapien blandit ornare. Mauris blandit sollicitudin neque ut vehicula. Sed at libero et arcu egestas viverra ac at purus. Nunc est sem, ullamcorper a quam et, ultrices hendrerit nulla. Praesent ut pretium nibh.',
-      image: logo
+      image: logo,
+      position: {
+        x: null,
+        y: null
+      },
+      type: 'introduction'
     },
     {
-      title: 'Grow in Strength',
+      title: '#Strength',
       summary: 'Donec eu ultrices est, nec semper quam. Sed accumsan quam ac tortor luctus volutpat. Nullam justo massa, molestie non felis ut, suscipit laoreet massa. Nunc suscipit metus mollis rutrum luctus.',
-      image: girls
+      image: threebw,
+      position: {
+        x: '50%',
+        y: '50%'
+      },
+      type: 'hashtag'
     },
     {
-      title: 'Grow in Relationships',
+      title: '#Friends',
       summary: 'Curabitur vel feugiat ante, sed pretium enim. Aenean efficitur ipsum non metus venenatis, quis congue erat iaculis. Suspendisse potenti. Praesent varius at enim non tincidunt. Cras euismod, felis vel porta scelerisque, turpis enim vestibulum ex, eu convallis diam odio sit amet lorem.',
-      image: lake
+      image: lakebw,
+      position: {
+        x: '50%',
+        y: '50%'
+      },
+      type: 'hashtag'
     },
     {
-      title: 'Grow in Confidence',
+      title: '#Confidence',
       summary: 'Aenean dignissim lacus eu dui sodales, non posuere libero efficitur. Suspendisse mattis elit non sapien hendrerit tempus. Etiam ut massa nec augue iaculis euismod. Quisque in ornare ex. Duis at ultrices ligula.',
-      image: smiles
+      image: smilesbw,
+      position: {
+        x: '50%',
+        y: '50%'
+      },
+      type: 'hashtag'
     }
   ],
   loggedIn: false,

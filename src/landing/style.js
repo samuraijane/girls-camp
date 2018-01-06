@@ -28,8 +28,11 @@ const Style = {
   callout: styled.div`
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     border-top: 1px solid rgba(255, 255, 255, 0.4);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 100;
     left: 50%;
+    line-height: 1.9rem;
     margin 10px auto 40px;
     padding: 40px 0;
     width: 80%;

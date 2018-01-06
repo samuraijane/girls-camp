@@ -71,7 +71,7 @@ class Landing extends Component {
           <Style.box>
             <Style.callout>Vivamus efficitur mauris eget ligula gravida, id accumsan enim luctus. Donec id suscipit justo, ac tincidunt metus. Ut at erat non sem rutrum malesuada.</Style.callout>
           </Style.box>
-          <Link to="clips" spy={true} smooth={true} duration={500}><Style.arrow src={arrow} /></Link>
+          <Link to="clips" offset={-46} spy={true} smooth={true} duration={500}><Style.arrow src={arrow} /></Link>
         </Style.imageW>
 
       </div>
