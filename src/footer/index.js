@@ -14,9 +14,8 @@ class Footer extends Component {
       <div>
         <Style.layout>
           <ul>
-            <Style.item><a>Contact</a></Style.item>
-            <Style.item><a>FAQ</a></Style.item>
-            <Style.item><a>History</a></Style.item>
+            <Style.item>Girls Camp 2018</Style.item>
+            <Style.item><a>Credits</a></Style.item>
           </ul>
         </Style.layout>
         <Sizer />

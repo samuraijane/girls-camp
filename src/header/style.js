@@ -1,6 +1,7 @@
 // NEWNAV
 
 import styled from "styled-components";
+import banner from "./../img/bannerx.jpg";
 
 const Style = {
 
@@ -77,7 +78,33 @@ const Style = {
     width: 100%;
     z-index: 30;
     &.active {
-      background: rgba(73, 104, 63, 0.9);
+      
+    }
+    &.active:after {
+      background: rgba(0, 54, 2, 1);
+      background: -moz-linear-gradient(left, rgba(0, 54, 2, 1) 0%, rgba(0, 54, 2, 0.6) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, rgba(0, 54, 2, 1) 0%,rgba(0, 54, 2, 0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, rgba(0, 54, 2, 1) 0%,rgba(0, 54, 2, 0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
+    &.active:before {
+      background: url('${banner}');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 150%;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -2;
     }
   `
 }

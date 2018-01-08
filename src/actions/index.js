@@ -1,7 +1,7 @@
 export const LOGIN_USER = 'LOGIN_USER';
-export const loginUser = loggedIn => ({
+export const loginUser = isLoggedIn => ({
     type: LOGIN_USER,
-    loggedIn
+    isLoggedIn
 });
 
 export const IS_MOBILE = 'IS_MOBILE';

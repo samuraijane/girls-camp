@@ -24,7 +24,7 @@ const initialState = {
       image: threebw,
       position: {
         x: '50%',
-        y: '50%'
+        y: '90%'
       },
       type: 'hashtag'
     },
@@ -34,7 +34,7 @@ const initialState = {
       image: lakebw,
       position: {
         x: '50%',
-        y: '50%'
+        y: '90%'
       },
       type: 'hashtag'
     },
@@ -44,12 +44,12 @@ const initialState = {
       image: smilesbw,
       position: {
         x: '50%',
-        y: '50%'
+        y: '90%'
       },
       type: 'hashtag'
     }
   ],
-  loggedIn: false,
+  isLoggedIn: false,
   isScroll: true,
   isFixed: false,
   // isMobile: false,
@@ -57,6 +57,45 @@ const initialState = {
     hasScroll: true,
     isMobile: false,
   },
+  navItems: [
+      {
+        name: 'About',
+        public: true,
+        private: true,
+        link: '#'
+      },
+      {
+        name: 'FAQ',
+        public: true,
+        private: true,
+        link: '#'
+      },
+      {
+        name: 'Login',
+        public: true,
+        private: false,
+        link: '#'
+      },
+      {
+        name: 'Sign Up',
+        public: true,
+        private: false,
+        link: '#'
+      },
+      {
+        name: 'Logout',
+        public: false,
+        private: true,
+        link: '#'
+      },
+      {
+        name: 'Profile',
+        public: false,
+        private: true,
+        link: '#'
+      }
+      
+  ],
   viewport: {
     height: 0,
     width: 0
@@ -65,9 +104,9 @@ const initialState = {
 
 export const reducer = (state=initialState, action) => {
   if (action.type === actions.LOGIN_USER) {
-    console.log('A', !action.loggedIn);
+    console.log('A', !action.isLoggedIn);
     return Object.assign({}, state, {
-      loggedIn: !action.loggedIn
+      isLoggedIn: !action.isLoggedIn
     });
   // } else if (action.type === actions.IS_MOBILE) {
   //   return Object.assign({}, state, {

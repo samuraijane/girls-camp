@@ -4,22 +4,23 @@ import Style from './style.js';
 import styled from 'styled-components';
 
 const Hashtag = styled.div`
-  left: ${props => props.stuff};
+  left: ${props => props.xpos};
   position: absolute;
-  top: ${props => props.stuff};
-  transform: translate(-50%, -50%);
+  top: ${props => props.ypos};
+  transform: translate(-${props => props.xpos}, -${props => props.ypos});
   color: white;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 30px;
   margin: 10px 0 4px;
+  z-index: 20;
 `;
 
 function Clips(props) {
   let bclip;
   let visual;
   if (props.type === 'hashtag') {
-    visual = <Style.nimgAlt><img src={props.image} alt="logo" /><Hashtag stuff={props.clips[1].position.x}>{props.title}</Hashtag></Style.nimgAlt>
+    visual = <Style.nimgAlt><img src={props.image} alt="logo" /><Hashtag xpos={props.position.x} ypos={props.position.y}>{props.title}</Hashtag></Style.nimgAlt>
     bclip = <Style.bclip><p>{props.summary}</p></Style.bclip>
   } else {
     visual = <Style.nimg><img src={props.image} alt="logo" /></Style.nimg>
@@ -37,8 +38,10 @@ function Clips(props) {
 
 // export default Clips;
 
-const mapStateToProps = state => ({
-  clips: state.clips
-});
+// const mapStateToProps = state => ({
+//   clips: state.clips
+// });
+//
+// export default connect(mapStateToProps)(Clips);
 
-export default connect(mapStateToProps)(Clips);
+export default Clips;

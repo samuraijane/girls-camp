@@ -12,18 +12,6 @@ const Style = {
     vertical-align: middle;
   `,
 
-  hashtag: styled.div`
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    font-size: 40px;
-    margin: 10px 0 4px;
-  `,
-
   nimg: styled.div`
     float: left;
     height: 290px;
@@ -54,8 +42,7 @@ const Style = {
   `,
 
   wrapper: styled.li`
-    margin: 22px 0 60px;
-    padding: 0 6px;
+    margin: 22px 0;
   `
 
 }

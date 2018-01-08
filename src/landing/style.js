@@ -28,6 +28,7 @@ const Style = {
   callout: styled.div`
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     border-top: 1px solid rgba(255, 255, 255, 0.4);
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 1.6rem;
     font-style: italic;
     font-weight: 100;

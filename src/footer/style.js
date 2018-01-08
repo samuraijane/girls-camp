@@ -4,9 +4,10 @@ import styled from "styled-components";
 
 const Style = {
   layout: styled.div`
-    background: aliceblue;
+    background: #4265ff;
+    color: white;
     text-align: center;
-    padding: 40px 0;
+    padding: 20px 0;
   `,
   item: styled.li`
     display: inline-block;

@@ -3,37 +3,45 @@ import {connect} from 'react-redux';
 import {loginUser} from '../actions';
 import Style from './style.js';
 import {isMobile, isFixed} from '../actions';
+import NavItem from './../navitem';
 
 class Navigation extends Component {
   constructor(props) {
     super(props);
   }
   componentDidMount() {
-    document.body.classList.toggle('disableScroll', !this.props.hasScroll)
+    //document.body.classList.toggle('disableScroll', !this.props.hasScroll)
   }
   componentWillReceiveProps(nextProps) {
-    document.body.classList.toggle('disableScroll', !nextProps.hasScroll)
+    //document.body.classList.toggle('disableScroll', !nextProps.hasScroll)
   }
   componentWillUnmount() {
-    document.body.classList.remove('disableScroll')
+    //document.body.classList.remove('disableScroll')
   }
 
   render() {
+    const navs = this.props.navItems.map((item, index) => {
+      if (this.props.isLoggedIn === false && item.public === true) {
+        return (
+          <NavItem key={index} {...item} />
+        )
+      } else if (this.props.isLoggedIn === true && item.private === true) {
+        return (
+          <NavItem key={index} {...item} />
+        )
+      }
+    });
     return (
       <Style.navs className={this.props.showMobile}>
-        <Style.nav>About</Style.nav>
-        <Style.nav>FAQ</Style.nav>
-        <Style.nav>Login</Style.nav>
-        <Style.nav>Sign Up</Style.nav>
+        {navs}
       </Style.navs>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  isFixed: state.isFixed,
-  isMobile: state.isMobile,
-  hasScroll: state.navigation.hasScroll
+  isLoggedIn: state.isLoggedIn,
+  navItems: state.navItems
 });
 
 export default connect(mapStateToProps)(Navigation);
