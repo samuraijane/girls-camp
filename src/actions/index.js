@@ -4,6 +4,12 @@ export const loginUser = isLoggedIn => ({
     isLoggedIn
 });
 
+export const LOGOUT_USER = 'LOGOUT_USER';
+export const logoutUser = isLoggedIn => ({
+    type: LOGOUT_USER,
+    isLoggedIn
+});
+
 export const IS_MOBILE = 'IS_MOBILE';
 export const isMobile = (status) => ({
     type: IS_MOBILE,

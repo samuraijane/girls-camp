@@ -74,7 +74,8 @@ const initialState = {
         name: 'Login',
         public: true,
         private: false,
-        link: '#'
+        link: '#',
+        func: 'doLogin'
       },
       {
         name: 'Sign Up',
@@ -86,7 +87,8 @@ const initialState = {
         name: 'Logout',
         public: false,
         private: true,
-        link: '#'
+        link: '#',
+        func: 'doLogout'
       },
       {
         name: 'Profile',
@@ -104,14 +106,13 @@ const initialState = {
 
 export const reducer = (state=initialState, action) => {
   if (action.type === actions.LOGIN_USER) {
-    console.log('A', !action.isLoggedIn);
     return Object.assign({}, state, {
-      isLoggedIn: !action.isLoggedIn
+      isLoggedIn: action.isLoggedIn
     });
-  // } else if (action.type === actions.IS_MOBILE) {
-  //   return Object.assign({}, state, {
-  //     isMobile: !action.status
-  //   });
+  } else if (action.type === actions.LOGOUT_USER) {
+    return Object.assign({}, state, {
+      isLoggedIn: action.isLoggedIn
+    });
   } else if (action.type === actions.IS_MOBILE) {
     return {
       ...state,
